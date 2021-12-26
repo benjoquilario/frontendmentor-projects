@@ -9,7 +9,7 @@ filterBtn.addEventListener('click', function () {
     : filterBtn.setAttribute('aria-expanded', false);
 });
 
-const challenge = document.querySelectorAll('.challenge');
+const filterList = document.querySelectorAll('.filter__list');
 
 filter.addEventListener('click', function (e) {
   const clicked = e.target.closest('.filter__btn');
@@ -17,16 +17,15 @@ filter.addEventListener('click', function (e) {
 
   const filterClicked = clicked.dataset.filter;
 
-  challenge.forEach((ch) => {
-    const category = ch.dataset.category;
-
+  filterList.forEach((list) => {
+    const category = list.dataset.category;
     if (filterClicked === 'all')
-      return ch.classList.remove('challenge--filter');
+      return list.classList.remove('challenge--filter');
 
     if (filterClicked !== category) {
-      ch.classList.add('challenge--filter');
+      list.classList.add('challenge--filter');
     } else {
-      ch.classList.remove('challenge--filter');
+      list.classList.remove('challenge--filter');
     }
   });
 });

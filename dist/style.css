@@ -71,7 +71,7 @@ h3 {
 }
 
 .main {
-  padding: 160px 16px 0;
+  padding: 160px 16px 40px;
 }
 
 @media screen and (max-width: 522px) {
@@ -174,7 +174,7 @@ h3 {
   text-align: left;
 }
 
-.filter__list {
+.filter__by {
   margin-top: 6px;
   -webkit-transition: -webkit-transform 350ms ease;
   transition: -webkit-transform 350ms ease;
@@ -182,7 +182,7 @@ h3 {
   transition: transform 350ms ease, -webkit-transform 350ms ease;
 }
 
-.filter__list:hover {
+.filter__by:hover {
   background-color: #fafafac9;
   -webkit-transform: translateX(8px);
           transform: translateX(8px);
@@ -190,6 +190,11 @@ h3 {
   transition: -webkit-transform 350ms ease;
   transition: transform 350ms ease;
   transition: transform 350ms ease, -webkit-transform 350ms ease;
+}
+
+.filter__list.challenge--filter {
+  display: none;
+  height: 380px;
 }
 
 .challenges {
@@ -235,17 +240,27 @@ h3 {
   transition: 0.6s ease opacity, 0.6s ease transform;
 }
 
-.challenges .challenge.challenge--filter {
-  display: none;
-  height: 380px;
-}
-
 .challenges .challenge__image img {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   display: block;
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: -webkit-transform 0.3s ease 0s;
+  transition: -webkit-transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+}
+
+.challenges .challenge__image img:hover {
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
+  -webkit-transition: -webkit-transform 0.3s ease 0s;
+  transition: -webkit-transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
 }
 
 .challenges .challenge__links {
