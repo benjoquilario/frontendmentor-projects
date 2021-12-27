@@ -14,7 +14,11 @@ const filterList = document.querySelectorAll('.filter__list');
 filter.addEventListener('click', function (e) {
   const clicked = e.target.closest('.filter__btn');
   if (!clicked) return;
-
+  
+  if (filter) {
+    filter.classList.remove('filter--active');
+  }
+  
   const filterClicked = clicked.dataset.filter;
 
   filterList.forEach((list) => {
